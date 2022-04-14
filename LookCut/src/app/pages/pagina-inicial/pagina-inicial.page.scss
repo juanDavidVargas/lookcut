@@ -1,0 +1,22 @@
+#container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ion-content {
+  .hydrated {
+    background: #000000 !important;
+  }
+  main .inner-scroll .scroll-y {
+    background-color: #000000 !important;
+  }
+  div #background-content {
+    background-color: #000000 !important;
+  }
+  video {
+    width: 100%;
+  }
+}

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title slot="start">Barberías</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="blanco" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="servicio.routeTo('/registro-barberias')">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cargarBarberias()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="#E5E5E5">
+
+  <ion-searchbar color="primary" debounce="500" (ionChange)="cargarBarberias()" [(ngModel)]="texto" placeholder="Buscar...">
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of barberias" #ionItemSliding>
+      <ion-item>
+        <ion-label text-wrap>
+          <p>
+            Nombre: {{item.descripcion}}
+          </p>
+          <p>Teléfono: {{item.telefono}}</p>
+          <p>Correo: {{item.correo}}</p>
+        </ion-label>
+        <ion-badge color="success" slot="end">{{item.desc_tipo_negocio}}</ion-badge>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option color="primary" (click)="detallesBarberia(item, ionItemSliding)">
+          <ion-icon name="eye"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option color="warning" (click)="editarBarberia(item, ionItemSliding)">
+          <ion-icon name="create-outline"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger" (click)="borrarBarberia(item, ionItemSliding)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<app-footer></app-footer>

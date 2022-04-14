@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/barberias"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{id == 0 ? 'Nuevo' : 'Editar'}} Barbería {{id == 0 ? '' : id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1>Edición Barberías</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+    <form #formularioEdicionBarberias="ngForm" (ngSubmit)="onSubmitForm()">
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="text" color="#FFFFFF" autofocus="true" id="nombres" name="nombres" placeholder="Nombre Barberia"  [(ngModel)]="nombre" required/>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="text" color="#FFFFFF" id="documento" name="documento" placeholder="Nit o CC Representante Legal" [(ngModel)]="nit" required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <ion-select name="ciudad" color="#FFFFFF" id="ciudad_id" placeholder="Ciudad" [(ngModel)]="ciudad_id" required mode="ios" okText="Aceptar" cancelText="Cancelar">
+            <ion-select-option *ngFor="let ciudad of ciudades" [value]="ciudad.id_ciudad">{{ciudad.ciu_descripcion}}</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="text" color="#FFFFFF" id="direccion" name="direccion" placeholder="Dirección de la Barbería" [(ngModel)]="direccion" required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="text" color="#FFFFFF" id="telefono" name="telefono" placeholder="Teléfono" [(ngModel)]="telefono" required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="email" color="#FFFFFF" id="correo" name="correo_electronico" placeholder="Correo Electrónico" [(ngModel)]="correo" required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">&nbsp;</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="2" offset="1">
+          <ion-checkbox checked="true" readonly="readonly" color="dark" id="barber" name="es_barberia" [(ngModel)]="es_barberia" required></ion-checkbox>
+        </ion-col>
+        <ion-col size="8">
+          <label for="barber">
+            Barbería
+          </label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">&nbsp;</ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col size="8" offset="2">
+          <button type="submit" expand="block" color="#12110F" size="large" [disabled]="formularioEdicionBarberias.invalid">Guardar</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
+
+<app-footer></app-footer>

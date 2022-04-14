@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "people",
+    "name": "Barberos",
+    "redirectTo": "/barberos"
+  },
+  {
+    "icon": "list",
+    "name": "Barberías",
+    "redirectTo": "/barberias"
+  },
+  {
+    "icon": "calendar",
+    "name": "Turnos",
+    "redirectTo": "/turnos"
+  },
+  {
+    "icon": "newspaper",
+    "name": "Servicios",
+    "redirectTo": "/servicios"
+  },
+  {
+    "icon": "locate",
+    "name": "Geolocalización",
+    "redirectTo": "/geolocalizacion"
+  }
+]

@@ -1,0 +1,25 @@
+ion-content {
+    ion-list {
+        ion-item-sliding {
+            ion-item {
+                ion-label {
+                    p {
+                        font-size: 20px;
+                    }
+                }
+                ion-badge {
+                    font-size: 20px;
+                }
+            }
+            ion-item-options {
+                ion-item-option {
+                    ion-icon {
+                        font-size: 20px;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+  }
+  

@@ -1,0 +1,7 @@
+{
+  "name": "LookCut",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

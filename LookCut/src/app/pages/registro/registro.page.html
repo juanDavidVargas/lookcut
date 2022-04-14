@@ -1,0 +1,110 @@
+<ion-header color="dark" class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-row>
+      <ion-col size="10" offset="2">
+        <ion-title>
+          <a href="/inicio">
+            <ion-img src="/assets/imgs/Registro-alterno_Logo.png"></ion-img>
+          </a>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="#E5E5E5">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1 color="#FFFFFF">
+          Registro Usuarios
+        </h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+    <form #formRegistro="ngForm" (ngSubmit)="onSubmitForm()">
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="text" color="#FFFFFF" autofocus="true" id="nombres" placeholder="Nombres"
+          [(ngModel)]="registro.nombres" name="nombres" required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="text" color="#FFFFFF" autofocus="true" id="apellidos" placeholder="Apellidos"
+          [(ngModel)]="registro.apellidos" name="apellidos" required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="text" color="#FFFFFF" autofocus="true" id="usuario" placeholder="Nombre de Usuario"
+          [(ngModel)]="registro.usuario" name="usuario" required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-select name="tipo_documento" color="#FFFFFF" id="tipo_documento" placeholder="Tipo Documento" [(ngModel)]="registro.tipo_documento" required mode="ios" okText="Aceptar" cancelText="Cancelar">
+          <ion-select-option *ngFor="let tipo_doc of tipo_documento" [value]="tipo_doc.id">{{tipo_doc.descripcion}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="text" color="#FFFFFF" id="documento" placeholder="Número Documento" [(ngModel)]="registro.documento" name="documento"
+          required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="email" color="#FFFFFF" id="correo" placeholder="Correo Electrónico" [(ngModel)]="registro.correo" name="correo"
+          required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="password" color="#FFFFFF" autofocus="true" id="password" placeholder="Contraseña"
+          [(ngModel)]="registro.contrasenia" name="contrasenia" required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <input type="password" color="#FFFFFF" autofocus="true" id="repetir-password" placeholder="Confirmar Contraseña"
+          [(ngModel)]="registro.confirmContrasenia" name="confirmContrasenia"
+          required />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list color="dark">
+          
+          <ion-radio-group value="tipo" color="dark" [(ngModel)]="registro.tipoCliente" name="tipoCliente" *ngFor="let rol of roles">
+            <ion-item color="dark">
+              <ion-label>{{rol.descripcion}}</ion-label>
+              <ion-radio slot="start" [value]="rol.id"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col size="8" offset="2">
+        <button type="submit" expand="block" color="#12110F" size="large" [disabled]="formRegistro.invalid">Registrarme</button>
+      </ion-col>
+    </ion-row>
+    </form>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-footer></app-footer>

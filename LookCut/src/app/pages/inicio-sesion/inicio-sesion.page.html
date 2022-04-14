@@ -1,0 +1,70 @@
+<ion-header color="dark" class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-row>
+      <ion-col size="10" offset="2">
+        <ion-title>
+          <a href="/inicio">
+            <ion-img src="/assets/imgs/Registro-alterno_Logo.png"></ion-img>
+          </a>
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="dark">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <h1>
+          <img class="medium" src="/assets/imgs/aun_no_tienes_una_cuenta.png" alt="registrate"/>
+          <a href="/registro">
+            <img class="registrate" src="/assets/imgs/registrate.png" alt="registrate"/>
+          </a>
+        </h1>
+        <h2>Inicio Sesión</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+    <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="text" color="blanco" autofocus id="username" name="username" placeholder="Nombre de Usuario" [(ngModel)]="usuario.username" required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="10" offset="1">
+          <input type="password" color="blanco" id="password" name="password" placeholder="Contraseña" [(ngModel)]="usuario.password"
+            required />
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">&nbsp;</ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col size="8" offset="2">
+          <button type="submit" expand="block" color="#12110F" size="large" [disabled]="formulario.invalid">Iniciar Sesión</button>
+        </ion-col>
+      </ion-row>
+    </form>
+     <ion-row>
+       <ion-col size="12">&nbsp;</ion-col>
+     </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-label class="no-background">
+          <a href="/recuperar-password">
+            ¿Olvidáste tu contraseña?
+          </a>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">&nbsp;</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<app-footer></app-footer>

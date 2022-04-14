@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true" color="dark" padding>
+  <div id="container" *ngFor="let home of logo">
+    <a href="/inicio-sesion">
+      <video autoplay muted loop>
+        <source src="assets/videos/presentacion_app.mp4" type="video/mp4">
+        <source src="assets/videos/presentacion_app.webm" type="video/webm">
+        <source src="assets/videos/presentacion_app.avi" type="video/avi">
+        <source src="assets/videos/presentacion_app.mpg" type="video/mpg">
+        <source src="assets/videos/presentacion_app.mov" type="video/mov">
+        <source src="assets/videos/presentacion_app.ogv" type="video/ogg">
+        <source src="assets/videos/presentacion_app.wmv" type="video/wmv">
+        <ion-img [src]="home.image" alt="Video no soportado"></ion-img>
+        No se soporta contenido multimedia
+      </video>
+    </a>
+  </div>
+</ion-content>
+
+<app-footer></app-footer>

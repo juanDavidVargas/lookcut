@@ -1,0 +1,86 @@
+ion-content {
+  ion-grid {
+    ion-row {
+      text-align: center;
+      ion-col {
+        h1 {
+          font-size: 30px;
+          font-weight: bold;
+          color: #FFFFFF !important;
+          img{
+            width: 100% !important;
+          }
+        }
+        ion-radio{
+          background-color: #FFFFFF;
+          color: #CCC;
+        }
+        h2{
+          img{
+            width: 30% !important;
+          }
+        }
+        label {
+          font-size: 25px;
+          color: #FFFFFF !important;
+          font-weight: bold;
+          padding-bottom: 5%;
+          width: 100%;
+        }
+        input {
+          font-size: 5vw;
+          color: #FFFFFF !important;
+          background: #12110F;
+          border-radius: 20px;
+          padding: 6%;
+          width: 100%;
+          border-bottom: 2px solid #ccc;
+        }
+        ion-select{
+          font-size: 25px;
+          color: #FFFFFF !important;
+          background: #12110F;
+          border-radius: 20px;
+          padding: 6%;
+          width: 100%;
+          border-bottom: 2px solid #ccc;
+        }
+        button {
+          font-size: 8vw;
+          border-radius: 20px;
+          width: 100%;
+          text-transform: uppercase;
+          color: #616664;
+          padding: 5vw;
+          border-bottom: 1px solid #ccc;
+          background: #12110F;
+        }
+        button:active {
+          font-size: 8vw;
+          border-radius: 20px;
+          width: 100%;
+          text-transform: uppercase;
+          color: #616664;
+          padding: 5vw;
+          border-bottom: 1px solid #ccc;
+          background: rgba(164, 179, 87, 1);
+          background: -moz-linear-gradient(left, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(164, 179, 87, 1)), color-stop(100%, rgba(0, 204, 234, 1)));
+          background: -webkit-linear-gradient(left, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
+          background: -o-linear-gradient(left, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
+          background: -ms-linear-gradient(left, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
+          background: linear-gradient(to right, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a4b357', endColorstr='#00ccea', GradientType=1);
+        }
+      }
+      ion-item{
+        font-size: 5vw;
+        background-color: #000000 !important;
+        font-family: Agencyb;
+      }
+    }
+  }
+}
+.list-md{
+  background-color: #000000 !important;
+}

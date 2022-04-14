@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title slot="start">Barberos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="blanco" menu="primerMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="servicio.routeTo('/registro-barberos')">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cargarBarberos()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="#E5E5E5">
+
+</ion-content>
+
+<app-footer></app-footer>

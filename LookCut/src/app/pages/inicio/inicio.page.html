@@ -1,0 +1,9 @@
+<ion-content [fullscreen]="true" color="dark" padding>
+  <div id="container" *ngFor="let home of logo">
+    <a href="/pagina-inicial">
+      <ion-img [src]="home.image" alt="Logo"></ion-img>
+    </a> 
+  </div>
+</ion-content>
+
+<app-footer></app-footer>
