@@ -4,7 +4,8 @@ ion-content {
       text-align: center;
       ion-col {
         h1 {
-          font-size: 25px;
+          // font-size: 25px;
+          font-size:  8vw;
           font-weight: bold;
           color: #FFFFFF !important;
           img.medium{
@@ -27,9 +28,10 @@ ion-content {
           width: 100%;
         }
         input {
-          font-size: 5vw;
-          color: #FFFFFF !important;
-          background: #12110F;
+          font-size: 6vw;
+          // color: #FFFFFF !important;
+          color: #000 !important;
+          // background: #12110F;
           border-radius: 20px;
           padding: 6%;
           width: 100%;

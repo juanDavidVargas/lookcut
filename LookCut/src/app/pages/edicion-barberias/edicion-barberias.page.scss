@@ -1,3 +1,22 @@
+ion-header {
+  ion-toolbar {
+      ion-title {
+          font-size: 6vw !important;
+          color: #FFFFFF !important;
+      }
+      ion-buttons {
+          ion-menu-button {
+              font-size: 8vw !important;
+          }
+          ion-button {
+              ion-icon {
+                  font-size: 8vw !important;
+              }
+          }
+      }
+  }
+}
+
 ion-content {
     ion-grid {
       ion-row {
@@ -16,25 +35,32 @@ ion-content {
             width: 100%;
           }
           input {
-            font-size: 25px;
-            color: #FFFFFF !important;
-            background: #12110F;
+            // font-size: 25px;
+            font-size: 6vw;
+            // color: #FFFFFF !important;
+            color: #000 !important;
+            // background: #12110F;
             border-radius: 20px;
             padding: 6%;
             width: 100%;
             border-bottom: 2px solid #ccc;
           }
+
           ion-select{
-            font-size: 25px;
-            color: #FFFFFF !important;
-            background: #12110F;
-            border-radius: 20px;
-            padding: 6%;
-            width: 100%;
-            border-bottom: 2px solid #ccc;
+             // font-size: 25px;
+              font-size: 6vw;;
+              // color: #FFFFFF !important;
+              color: #000 !important;
+              // background: #12110F;
+              background: #FFF;
+              border-radius: 20px;
+              padding: 6%;
+              width: 100%;
+              border-bottom: 2px solid #ccc;
           }
           button {
-            font-size: 25px;
+            // font-size: 25px;
+            font-size: 8vw;
             border-radius: 20px;
             width: 100%;
             text-transform: uppercase;

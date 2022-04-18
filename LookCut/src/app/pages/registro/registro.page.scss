@@ -4,7 +4,8 @@ ion-content {
       text-align: center;
       ion-col {
         h1 {
-          font-size: 30px;
+          // font-size: 30px;
+          font-size: 8vw;
           font-weight: bold;
           color: #FFFFFF !important;
           img{
@@ -21,25 +22,29 @@ ion-content {
           }
         }
         label {
-          font-size: 25px;
+          // font-size: 25px;
+          font-size: 8vw;
           color: #FFFFFF !important;
           font-weight: bold;
-          padding-bottom: 5%;
           width: 100%;
         }
         input {
-          font-size: 5vw;
-          color: #FFFFFF !important;
-          background: #12110F;
+          font-size: 6vw;
+          // color: #FFFFFF !important;
+          color: #000 !important;
+          // background: #12110F;
           border-radius: 20px;
           padding: 6%;
           width: 100%;
           border-bottom: 2px solid #ccc;
         }
         ion-select{
-          font-size: 25px;
-          color: #FFFFFF !important;
-          background: #12110F;
+          // font-size: 25px;
+          font-size: 6vw;;
+          // color: #FFFFFF !important;
+          color: #000 !important;
+          // background: #12110F;
+          background: #FFF;
           border-radius: 20px;
           padding: 6%;
           width: 100%;
@@ -50,7 +55,8 @@ ion-content {
           border-radius: 20px;
           width: 100%;
           text-transform: uppercase;
-          color: #616664;
+          // color: #616664;
+          color: #FFF;
           padding: 5vw;
           border-bottom: 1px solid #ccc;
           background: #12110F;
@@ -60,7 +66,8 @@ ion-content {
           border-radius: 20px;
           width: 100%;
           text-transform: uppercase;
-          color: #616664;
+          // color: #616664;
+          color: #FFF;
           padding: 5vw;
           border-bottom: 1px solid #ccc;
           background: rgba(164, 179, 87, 1);
@@ -72,15 +79,23 @@ ion-content {
           background: linear-gradient(to right, rgba(164, 179, 87, 1) 0%, rgba(0, 204, 234, 1) 100%);
           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a4b357', endColorstr='#00ccea', GradientType=1);
         }
+        ion-list {
+          margin-top: 6vw !important;
+          background: #25e0a9 !important;
+        }
       }
       ion-item{
-        font-size: 5vw;
-        background-color: #000000 !important;
+        font-size: 6vw;
+        // background-color: #FFFFFF !important;
         font-family: Agencyb;
+        color: #000000 !important;
+        border-radius: 50px;
+        margin-bottom: 1vw !important;
       }
     }
   }
 }
 .list-md{
-  background-color: #000000 !important;
+  // background-color: #000000 !important;
+  background-color: #25e0a9 !important;
 }

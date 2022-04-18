@@ -41,10 +41,8 @@ export class RegistroPage implements OnInit {
   cargarTiposDocumento()
   {
     this.servicio.getToken().subscribe((data: any) => {
-
       this.token = data.access_token;
       this.obtenerDocumentos({token: this.token});
-
     }, error => {
       this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
     });
@@ -53,10 +51,8 @@ export class RegistroPage implements OnInit {
   cargarRoles()
   {
     this.servicio.getToken().subscribe((data: any) => {
-
       this.token = data.access_token;
       this.obtenerRoles({token: this.token});
-
     }, error => {
       this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
     });
@@ -66,19 +62,14 @@ export class RegistroPage implements OnInit {
   {
     let load = await this.loading.create();
     load.present();
-
     this.servicio.obtenerDocumentos({
       access_token: data.token
     }).subscribe((data: any) => {
-
       this.tipo_documento = data.TipoDocumento;
       load.dismiss();
-
     }, response => {
-
       let msg = response.error.error.message;
       this.servicio.mensaje(msg, 'danger');
-
       load.dismiss();
     });
   }
@@ -87,19 +78,15 @@ export class RegistroPage implements OnInit {
   {
     let load = await this.loading.create();
     load.present();
-
     this.servicio.obtenerRoles({
       access_token: data.token
     }).subscribe((data: any) => {
 
       this.roles = data.Roles;
       load.dismiss();
-
     }, response => {
-
       let msg = response.error.error.message;
       this.servicio.mensaje(msg, 'danger');
-
       load.dismiss();
     });
   }
@@ -109,11 +96,9 @@ export class RegistroPage implements OnInit {
     let load = await this.loading.create();
     load.present();
     this.servicio.getToken().subscribe((data: any) => {
-
       this.token = data.access_token;
       this.registroUsuario({token: this.token});
       load.dismiss();
-
     }, error => {
       this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
       load.dismiss();
@@ -124,9 +109,7 @@ export class RegistroPage implements OnInit {
   {
     let load = await this.loading.create();
     load.present();
-
     this.servicio.registroUsuarios({
-
       nombres: this.registro.nombres,
       apellidos: this.registro.apellidos,
       usuario: this.registro.usuario,
@@ -137,16 +120,12 @@ export class RegistroPage implements OnInit {
       rol: this.registro.tipoCliente,
       access_token: data.token
     }).subscribe((data: any) => {
-
      let msg = data.Data.message;
      this.servicio.mensaje(msg, 'success');
      this.servicio.routeTo('/inicio-sesion');
-
       load.dismiss();
     }, response => {
-
       let msg = response.error.error.message;
-
       this.servicio.mensaje(msg, 'danger');
       load.dismiss();
     });

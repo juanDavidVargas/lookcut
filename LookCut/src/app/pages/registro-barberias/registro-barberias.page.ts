@@ -83,9 +83,7 @@ export class RegistroBarberiasPage implements OnInit {
   {
     let load = await this.loading.create();
     load.present();
-
     this.servicio.registroBarberias({
-
       nombre: this.barberia.nombre,
       documento: this.barberia.documento,
       direccion: this.barberia.direccion,
@@ -105,7 +103,6 @@ export class RegistroBarberiasPage implements OnInit {
       this.servicio.mensaje(msg, 'danger');
       load.dismiss();
     });
-
   }
 
 }

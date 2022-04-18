@@ -1,18 +1,7 @@
-<ion-header color="dark" class="ion-no-border">
-  <ion-toolbar color="dark">
-    <ion-row>
-      <ion-col size="10" offset="2">
-        <ion-title>
-          <a href="/inicio">
-            <ion-img src="/assets/imgs/Registro-alterno_Logo.png"></ion-img>
-          </a>
-        </ion-title>
-      </ion-col>
-    </ion-row>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding color="#E5E5E5">
+<app-header></app-header>
+
+<ion-content padding color="#E5E5E5" position="fixed">
   <ion-grid>
     <ion-row>
       <ion-col size="12">
@@ -80,15 +69,14 @@
     </ion-row>
     <ion-row>
       <ion-col size="12">
-        <ion-list color="dark">
-          
-          <ion-radio-group value="tipo" color="dark" [(ngModel)]="registro.tipoCliente" name="tipoCliente" *ngFor="let rol of roles">
+        <label for="">Soy</label>
+        <ion-list color="#25e0a9">
+          <ion-radio-group value="tipo" color="#25e0a9" [(ngModel)]="registro.tipoCliente" name="tipoCliente" *ngFor="let rol of roles">
             <ion-item color="dark">
               <ion-label>{{rol.descripcion}}</ion-label>
               <ion-radio slot="start" [value]="rol.id"></ion-radio>
             </ion-item>
           </ion-radio-group>
-
         </ion-list>
       </ion-col>
     </ion-row>

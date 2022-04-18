@@ -1,4 +1,24 @@
+ion-header {
+    ion-toolbar {
+        ion-title {
+            font-size: 8vw !important;
+            color: #FFFFFF !important;
+        }
+        ion-buttons {
+            ion-menu-button {
+                font-size: 8vw !important;
+            }
+            ion-button {
+                ion-icon {
+                    font-size: 8vw !important;
+                }
+            }
+        }
+    }
+}
+
 ion-content {
+    background: #25e0a9 !important;
     ion-list {
         ion-item-sliding {
             ion-item {
@@ -22,4 +42,8 @@ ion-content {
         }
     }
   }
+
+#background-content {
+    background: #25e0a9 !important;
+}
   
