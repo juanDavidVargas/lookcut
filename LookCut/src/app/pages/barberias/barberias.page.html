@@ -24,11 +24,11 @@
     <ion-item-sliding *ngFor="let item of barberias" #ionItemSliding>
       <ion-item>
         <ion-label text-wrap>
-          <p>
-            Nombre: {{item.descripcion}}
-          </p>
+          <p>Nombre: {{item.descripcion}}</p>
           <p>Teléfono: {{item.telefono}}</p>
           <p>Correo: {{item.correo}}</p>
+          <p>Direcci&oacute;n: {{item.direccion}}</p>
+          <p>Ciudad: {{item.des_ciudad}}</p>
         </ion-label>
         <ion-badge color="success" slot="end">{{item.desc_tipo_negocio}}</ion-badge>
       </ion-item>

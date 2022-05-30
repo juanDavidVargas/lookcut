@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
+import { InicioSesionPage } from './pages/inicio-sesion/inicio-sesion.page';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { DataService } from './services/data.service';
     SplashScreen,
     Geolocation,
     DataService,
+    InicioSesionPage,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent],

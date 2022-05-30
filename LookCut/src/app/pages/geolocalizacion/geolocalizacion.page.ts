@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { LoadingController } from '@ionic/angular';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion.page';
 
 declare var google;
 
@@ -12,15 +13,20 @@ declare var google;
 export class GeolocalizacionPage implements OnInit {
   constructor(
     private geolocation: Geolocation,
-    private ctrlLoading: LoadingController
+    private ctrlLoading: LoadingController,
+    public inicioSesion: InicioSesionPage
   ) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter()
+  {
+    this.inicioSesion.validarSesion();
     this.loadMap();
   }
 
-  async loadMap() {
-
+  async loadMap() 
+  {
     const loading = await this.ctrlLoading.create();
     loading.present();
 

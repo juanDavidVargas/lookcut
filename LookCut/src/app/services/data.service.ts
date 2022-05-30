@@ -40,6 +40,23 @@ export class DataService {
                           );
   }
 
+  logout(data: any)
+  {
+    // Borramos las variables de la sesion
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('sesion_iniciada');
+    sessionStorage.removeItem('id_usuario');
+
+    return this.http.post(this.urlAPI + 'logout', 
+                            {},
+                            {headers: new HttpHeaders({
+                              username: this.userApi,
+                              password: this.passwordApi,
+                              Authorization: 'Bearer ' + data.access_token
+                            })}
+                          );
+  }
+
   registroBarberias(data: any)
   {
     return this.http.post(this.urlAPI + 'registro_barberias', 
@@ -66,11 +83,9 @@ export class DataService {
                             {
                               nombres: data.nombres,
                               apellidos: data.apellidos,
-                              usuario: data.usuario,
                               tipo_documento: data.tipo_documento,
                               documento: data.documento,
                               correo: data.correo,
-                              contrasenia: data.contrasenia,
                               rol: data.rol
                             },
                             {headers: new HttpHeaders({
@@ -126,6 +141,22 @@ export class DataService {
                           );
   }
 
+  validarSesion(data: any)
+  {
+      return this.http.post(this.urlAPI + 'validar_sesion', 
+                            {
+                              username: data.sesion_username, 
+                              sesion_iniciada: data.sesion_iniciada,
+                              id_usuario: data.sesion_id_user
+                            },
+                            {headers: new HttpHeaders({
+                              username: this.userApi,
+                              password: this.passwordApi,
+                              Authorization: 'Bearer ' + data.access_token
+                            })}
+                        );
+  }
+
   cargarBarberiaPorId(data: any)
   {
     return this.http.post(this.urlAPI + 'barberia_por_id', 
@@ -179,7 +210,7 @@ export class DataService {
     const toast = await this.toastCtrl.create({
       message: texto,
       color: tipo,
-      duration: 5000,
+      duration: 6000,
       position: 'middle'
     });
 

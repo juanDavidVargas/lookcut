@@ -26,7 +26,7 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 ion-content{
-  background-color: #25e0a9 !important;
+  // background-color: #25e0a9 !important;
   font-family: Agencyb;
 }
 ion-toolbar{
@@ -65,23 +65,26 @@ ion-select{
 ion-label {
   font-family: Agencyb !important;
 }
+label {
+  font-family: Agencyb !important;
+}
 ion-grid{
   // background-color: #000000 !important;
-  background-color: #25e0a9 !important;
+  // background-color: #25e0a9 !important;
 }
 ion-item{
-  background-color: #25e0a9 !important;
+  // background-color: #25e0a9 !important;
 }
 .mayus{
   text-transform: uppercase;
 }
 div #background-content {
-  background: #25e0a9 !important;
+  // background: #25e0a9 !important;
 }
 .inner-scroll {
-  background: #25e0a9 !important;
+  // background: #25e0a9 !important;
 }
 
 main .inner-scroll .scroll-y .overscroll {
-  background: #25e0a9 !important;
+  // background: #25e0a9 !important;
 }

@@ -8,6 +8,7 @@
         <h1 color="#FFFFFF">
           Registro Usuarios
         </h1>
+        <ion-button href="/inicio-sesion" color="dark"><ion-icon name="arrow-back-outline"></ion-icon>&nbsp;Volver</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -26,12 +27,12 @@
           [(ngModel)]="registro.apellidos" name="apellidos" required />
       </ion-col>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col size="10" offset="1">
         <input type="text" color="#FFFFFF" autofocus="true" id="usuario" placeholder="Nombre de Usuario"
           [(ngModel)]="registro.usuario" name="usuario" required />
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row>
       <ion-col size="10" offset="1">
         <ion-select name="tipo_documento" color="#FFFFFF" id="tipo_documento" placeholder="Tipo Documento" [(ngModel)]="registro.tipo_documento" required mode="ios" okText="Aceptar" cancelText="Cancelar">
@@ -51,19 +52,19 @@
           required />
       </ion-col>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col size="10" offset="1">
         <input type="password" color="#FFFFFF" autofocus="true" id="password" placeholder="Contraseña"
           [(ngModel)]="registro.contrasenia" name="contrasenia" required />
       </ion-col>
-    </ion-row>
-    <ion-row>
+    </ion-row> -->
+    <!-- <ion-row>
       <ion-col size="10" offset="1">
         <input type="password" color="#FFFFFF" autofocus="true" id="repetir-password" placeholder="Confirmar Contraseña"
           [(ngModel)]="registro.confirmContrasenia" name="confirmContrasenia"
           required />
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     <ion-row>
       <ion-col size="12">&nbsp;</ion-col>
     </ion-row>

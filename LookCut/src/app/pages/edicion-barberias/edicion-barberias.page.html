@@ -3,7 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/barberias"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{id == 0 ? 'Nuevo' : 'Editar'}} Barber&iacute;a {{id == 0 ? '' : id}}</ion-title>
+    <ion-title>
+        {{id == 0 ? 'Nuevo' : 'Editar'}} Barber&iacute;a {{id == 0 ? '' : id}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="recargarPagina()">
+        <ion-icon name="refresh"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 

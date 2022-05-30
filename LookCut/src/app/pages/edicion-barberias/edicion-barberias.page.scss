@@ -25,11 +25,11 @@ ion-content {
           h1 {
             font-size: 30px;
             font-weight: bold;
-            color: #FFFFFF !important;
+            // color: #FFFFFF !important;
           }
           label {
             font-size: 25px;
-            color: #FFFFFF !important;
+            // color: #FFFFFF !important;
             font-weight: bold;
             padding-bottom: 5%;
             width: 100%;
@@ -43,9 +43,11 @@ ion-content {
             border-radius: 20px;
             padding: 6%;
             width: 100%;
-            border-bottom: 2px solid #ccc;
+            // border-bottom: 2px solid #ccc;
           }
-
+          input:focus{
+            overflow-y: hidden !important;
+          }
           ion-select{
              // font-size: 25px;
               font-size: 6vw;;
@@ -56,7 +58,8 @@ ion-content {
               border-radius: 20px;
               padding: 6%;
               width: 100%;
-              border-bottom: 2px solid #ccc;
+              // border-bottom: 2px solid #ccc;
+              border: 1px solid #000000;
           }
           button {
             // font-size: 25px;

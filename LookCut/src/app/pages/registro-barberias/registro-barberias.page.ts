@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion.page';
 
 @Component({
   selector: 'app-registro-barberias',
@@ -25,12 +26,14 @@ export class RegistroBarberiasPage implements OnInit {
 
   constructor(
     public servicio: DataService, 
-    public loading: LoadingController) { }
+    public loading: LoadingController,
+    public inicioSesion: InicioSesionPage) { }
 
   ngOnInit() {}
 
   ionViewWillEnter()
   {
+    this.inicioSesion.validarSesion();
     this.cargarCiudades();
   }
 

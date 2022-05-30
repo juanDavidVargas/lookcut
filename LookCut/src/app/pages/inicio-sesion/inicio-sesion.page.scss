@@ -7,7 +7,7 @@ ion-content {
           // font-size: 25px;
           font-size:  8vw;
           font-weight: bold;
-          color: #FFFFFF !important;
+          // color: #FFFFFF !important;
           img.medium{
             width: 100% !important;
           }
@@ -18,7 +18,7 @@ ion-content {
         h2{
           font-size: 8vw;
           font-weight: bold;
-          color: #FFFFFF !important;
+          // color: #FFFFFF !important;
         }
         label {
           font-size: 25px;
@@ -35,7 +35,8 @@ ion-content {
           border-radius: 20px;
           padding: 6%;
           width: 100%;
-          border-bottom: 2px solid #ccc;
+          // border-bottom: 2px solid #ccc;
+          border: 1px solid #000000;
         }
         button {
           font-size: 8vw;
@@ -66,7 +67,7 @@ ion-content {
         }
         a{
           text-decoration: none;
-          color: #FFFFFF;
+          color: #000000 !important;
           font-size: 8vw;
         }
       }

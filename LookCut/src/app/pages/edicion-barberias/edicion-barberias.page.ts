@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion.page';
 
 @Component({
   selector: 'app-edicion-barberias',
@@ -25,7 +26,8 @@ export class EdicionBarberiasPage implements OnInit {
   constructor(
     public servicio: DataService, 
     public loading: LoadingController,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public inicioSesion: InicioSesionPage
   ) {
       this.id = this.route.snapshot.params.barberiaId ? this.route.snapshot.params.barberiaId : 0;
    }
@@ -35,19 +37,25 @@ export class EdicionBarberiasPage implements OnInit {
 
   ionViewWillEnter()
   { 
-    this.cargarCiudades();
-    this.cargarBarberiaPorId();
+      this.inicioSesion.validarSesion();
+      this.cargarCiudades();
+      this.cargarBarberiaPorId();
+  }
+
+  async recargarPagina()
+  {
+    this.ionViewWillEnter();
   }
 
   cargarCiudades()
   {
-    this.servicio.getToken().subscribe((data: any) => {
-
-      this.token = data.access_token;
-      this.obtenerCiudades({token: this.token});
-
-    }, error => {
-      this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
+    this.servicio.getToken().subscribe((data: any) => 
+    {
+        this.token = data.access_token;
+        this.obtenerCiudades({token: this.token});
+    }, error => 
+    {
+        this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
     });
   }
 
@@ -177,13 +185,8 @@ export class EdicionBarberiasPage implements OnInit {
 
       let msg = response.error.error.message;
 
-      console.log(msg);
-      return;
-
       this.servicio.mensaje(msg, 'danger');
       load.dismiss();
     });
-
   }
-
 }

@@ -15,6 +15,12 @@ export class InicioSesionPage implements OnInit {
     username: ''
   };
 
+  sesion_usuario = {
+    usuario: '',
+    sesion_iniciada: false,
+    id_usuario: 0
+  };
+
   token: string = '';
 
   constructor(
@@ -58,6 +64,10 @@ export class InicioSesionPage implements OnInit {
 
         let rol_id = data.Data[0].rol_id;
         let username = data.Data[0].usuario;
+        
+        sessionStorage.username = data.Data[1];
+        sessionStorage.sesion_iniciada = data.Data[2];
+        sessionStorage.id_usuario = data.Data[3];
 
         // Si rol es 1 (barbero)
         if(rol_id == 1 || rol_id == "1")
@@ -81,6 +91,50 @@ export class InicioSesionPage implements OnInit {
         this.servicio.mensaje(msg, 'danger');
       }
       load.dismiss();
+    });
+  }
+
+  async validarSesion()
+  {
+      this.servicio.getToken().subscribe((data: any) =>
+      {
+          this.token = data.access_token;
+          let username_sesion = sessionStorage.getItem('username');
+          let sesion_iniciada = sessionStorage.getItem('sesion_iniciada');
+          let id_user_sesion = sessionStorage.getItem('id_usuario');
+
+          this.validateSession({
+
+            token: this.token,
+            sesion_username: username_sesion,
+            sesion_iniciada: sesion_iniciada,
+            sesion_id_user: id_user_sesion
+          });
+      }, error => 
+      {
+          this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
+      });
+  }
+
+  async validateSession(data: any)
+  {
+    let load = await this.loading.create();
+    load.present();
+
+    this.servicio.validarSesion({
+      access_token: data.token,
+      sesion_username: data.sesion_username,
+      sesion_iniciada: data.sesion_iniciada,
+      sesion_id_user: data.sesion_id_user
+    }).subscribe((data: any) => 
+    {
+        load.dismiss();
+    }, response => 
+    {
+        let msg = response.error.error.message;
+        this.servicio.mensaje(msg, 'danger');
+        this.servicio.routeTo('/inicio-sesion');
+        load.dismiss();
     });
   }
 }

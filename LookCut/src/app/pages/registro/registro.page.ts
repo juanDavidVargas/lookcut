@@ -112,11 +112,9 @@ export class RegistroPage implements OnInit {
     this.servicio.registroUsuarios({
       nombres: this.registro.nombres,
       apellidos: this.registro.apellidos,
-      usuario: this.registro.usuario,
       tipo_documento: this.registro.tipo_documento,
       documento: this.registro.documento,
       correo: this.registro.correo,
-      contrasenia: this.registro.contrasenia,
       rol: this.registro.tipoCliente,
       access_token: data.token
     }).subscribe((data: any) => {

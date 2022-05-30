@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonItemSliding, LoadingController } from '@ionic/angular';
 import { DataService } from 'src/app/services/data.service';
+import { InicioSesionPage } from '../inicio-sesion/inicio-sesion.page';
 
 @Component({
   selector: 'app-barberias',
@@ -15,25 +16,27 @@ export class BarberiasPage implements OnInit {
 
   constructor(
     public servicio: DataService, 
-    public loading: LoadingController) { }
+    public loading: LoadingController,
+    public inicioSesion: InicioSesionPage) { }
 
   ngOnInit() {
   }
 
   ionViewWillEnter()
   {
+    this.inicioSesion.validarSesion();
     this.cargarBarberias();
   }
 
   async cargarBarberias()
   {
-    this.servicio.getToken().subscribe((data: any) => {
-
-      this.token = data.access_token;
-      this.obtenerBarberias({token: this.token});
-
-    }, error => {
-      this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
+    this.servicio.getToken().subscribe((data: any) =>
+     {
+        this.token = data.access_token;
+        this.obtenerBarberias({token: this.token});
+    }, error => 
+    {
+        this.servicio.mensaje("NO es posible procesar su petición en estos momentos, íntente más tarde", 'danger');
     });
   }
 
